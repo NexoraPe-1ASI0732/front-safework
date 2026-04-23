@@ -1,70 +1,65 @@
-<mat-card 
-  class="assignment-card"
-  [ngClass]="getStatusClass()"
-  role="article"
-  [attr.aria-label]="assignment.incidentTitle + ' - ' + getStatusText()">
+<div class="custom-card">
 
-  <mat-card-header>
-    <!-- Status Badge -->
-    <div class="status-badge" [ngClass]="getStatusClass()">
-      <mat-icon class="status-icon">{{ getStatusIcon() }}</mat-icon>
-      <span class="status-text">{{ getStatusText() }}</span>
+  <div class="card-header">
+    <div class="status-badge" [class]="getBadgeClass(assignment.status)">
+      <span class="status-dot"></span>
+      {{ assignment.status }}
     </div>
-  </mat-card-header>
 
-  <mat-card-content>
-    <!-- Incident Title -->
-    <h3 class="incident-title" [ngClass]="getStatusClass()">
-      {{ assignment.incidentTitle }}
-    </h3>
+    <div class="header-actions">
+      @if (canStart()) {
+      <button mat-flat-button class="btn-primary-custom" (click)="start.emit(assignment.incidentId)">
+        Start Task
+      </button>
+      }
 
-    <!-- Incident Description -->
+      @if (canClose()) {
+      <button mat-flat-button class="btn-warn-custom" (click)="requestClose.emit(assignment)">
+        Mark as Done
+      </button>
+      }
+
+      @if (assignment.status === 'CLOSED') {
+      <button mat-stroked-button (click)="editDocument.emit(assignment)">
+        Edit Proof
+      </button>
+      }
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h3 class="incident-title">Incident #{{assignment.incidentId}}</h3>
+
     <p class="incident-description">
-      {{ assignment.incidentDescription }}
+      {{ assignment.incidentTitle }}
     </p>
 
-    <mat-divider></mat-divider>
+    <div class="priority-wrapper">
+      <button mat-button [matMenuTriggerFor]="priorityMenu" class="priority-btn"
+        [class]="'priority-' + assignment.priority.toLowerCase()">
+        <mat-icon class="alert-icon">warning</mat-icon>
+        Priority: <strong>{{ assignment.priority }}</strong>
+      </button>
 
-    <!-- Assignee Information -->
-    <div class="assignee-section" role="group" [attr.aria-label]="'assignments.card.assigneeAriaLabel' | translate">
-      <div class="assignee-header">
-        <mat-icon class="assignee-icon">person</mat-icon>
-        <span class="assignee-label">{{ 'assignments.card.assignedTo' | translate }}</span>
-      </div>
-      <div class="assignee-details">
-        <strong class="assignee-name">{{ assignment.assignee.name }}</strong>
-        <span class="assignee-role">{{ assignment.assignee.role }}</span>
+      <mat-menu #priorityMenu="matMenu">
+        <button mat-menu-item (click)="changePriority.emit('HIGH')">🔴 HIGH</button>
+        <button mat-menu-item (click)="changePriority.emit('MEDIUM')">🟡 MEDIUM</button>
+        <button mat-menu-item (click)="changePriority.emit('LOW')">🟢 LOW</button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <div class="card-divider"></div>
+
+  <div class="card-footer">
+    <div class="date-info">
+      <mat-icon class="calendar-icon">calendar_today</mat-icon>
+      <div class="date-text">
+        <span class="label">ASSIGNED:</span>
+        <span class="value">{{ assignment.assignedAt | date:'mediumDate' }}, {{ assignment.assignedAt | date:'shortTime'
+          }}</span>
       </div>
     </div>
+  </div>
 
-    <mat-divider></mat-divider>
-
-    <!-- SLA Information -->
-    <app-sla-view [sla]="assignment.sla"></app-sla-view>
-
-    <mat-divider></mat-divider>
-
-    <!-- Timeline Information -->
-    <div class="timeline-section" role="group" [attr.aria-label]="'assignments.card.timelineAriaLabel' | translate">
-      <div class="timeline-item">
-        <mat-icon class="timeline-icon">event</mat-icon>
-        <div class="timeline-details">
-          <span class="timeline-label">{{ 'assignments.card.assignedAt' | translate }}</span>
-          <time [attr.datetime]="assignment.assignedAt.toISOString()" class="timeline-value">
-            {{ formatDate(assignment.assignedAt) }}
-          </time>
-        </div>
-      </div>
-
-      <div class="timeline-item" *ngIf="assignment.completedAt">
-        <mat-icon class="timeline-icon">check_circle</mat-icon>
-        <div class="timeline-details">
-          <span class="timeline-label">{{ 'assignments.card.completedAt' | translate }}</span>
-          <time [attr.datetime]="assignment.completedAt.toISOString()" class="timeline-value">
-            {{ formatDate(assignment.completedAt) }}
-          </time>
-        </div>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+</div>

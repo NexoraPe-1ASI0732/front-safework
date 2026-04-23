@@ -1,0 +1,45 @@
+<div class="custom-card" [class]="'status-' + incident.status.toLowerCase()">
+
+    <div class="card-status-row">
+        <div class="status-indicator">
+            <span class="dot" [class]="'dot-' + incident.status.toLowerCase()"></span>
+            <span class="status-text">{{ incident.status }}</span>
+        </div>
+
+        <span class="date-text">Oct 1, 2025, 05:00 AM</span>
+    </div>
+
+    <div class="card-main-content">
+        <h2 class="incident-title">{{ incident.title }}</h2>
+        <p class="incident-desc">{{ incident.description }}</p>
+    </div>
+
+    <div class="card-actions-footer">
+
+        <div class="meta-tags">
+            <span class="tag">ID: #{{ incident.id }}</span>
+            <span class="tag">Created By: {{ incident.reporterName }}</span>
+        </div>
+
+        <div class="action-buttons">
+
+            <button class="btn-action btn-dark" (click)="viewDetails.emit(incident.id)">
+                View Details
+            </button>
+
+            @if (canAssign()) {
+            <button class="btn-action btn-yellow" (click)="assignToMe.emit(incident.id)">
+                Assign to Me
+            </button>
+            }
+
+            @if (incident.documentUrl) {
+            <button class="btn-action btn-blue" (click)="openDocument()">
+                View File
+            </button>
+            }
+
+        </div>
+    </div>
+
+</div>

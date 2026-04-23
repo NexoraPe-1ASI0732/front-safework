@@ -1,12 +1,22 @@
 export const environment = {
   production: true,
   //Up to change it for the real backend URL later or a deployed db.json server
-  baseApiBaseUrl: 'http://localhost:3000',
-  usersEndpoint: 'http://localhost:3000/users',
-  incidentsEndpoint: 'http://localhost:3000/incidents',
-  assignmentsEndpoint: 'http://localhost:3000/assignments',
-  notificationsEndpoint: 'http://localhost:3000/notifications',
-  analyticsEndpoint: 'http://localhost:3000/analytics',
+  baseApiBaseUrl: 'https://backend-safework.azurewebsites.net/api/v1',
+
+  // ENDPOINTS
+  authenticationEndpoint: 'https://backend-safework.azurewebsites.net/api/v1/authentication',
+
+
+
+
+  usersEndpoint: 'https://backend-safework.azurewebsites.net/api/v1/users',
+
+
+
+  incidentsEndpoint: 'https://backend-safework.azurewebsites.net/api/v1/incidents',
+  assignmentsEndpoint: 'https://backend-safework.azurewebsites.net/api/v1/assignments',
+  notificationsEndpoint: 'https://backend-safework.azurewebsites.net/api/v1/notifications',
+  analyticsEndpoint: 'https://backend-safework.azurewebsites.net/api/v1/analytics',
 
   userEndpointPath: '/users',
   incidentEndpointPath: '/incidents',
