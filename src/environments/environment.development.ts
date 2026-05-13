@@ -2,7 +2,7 @@ export const environment = {
   production: false,
 
   // LOCAL-HOST BACKEND API, MUST HAVE THE OTHER BACKEND API RUNNING
-  baseApiBaseUrl: 'http://localhost:8080/api/v1',
+  baseApiBaseUrl: 'https://backend-safework.onrender.com/api/v1',
 
   // ENDPOINTS
   authenticationEndpoint: 'http://localhost:8080/api/v1/authentication',
