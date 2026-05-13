@@ -77,6 +77,8 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "outputPath": "dist/front-safework",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
