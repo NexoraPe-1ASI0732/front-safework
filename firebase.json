@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/front-safework",
+    "public": "dist/front-safework/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
