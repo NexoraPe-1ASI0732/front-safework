@@ -9,14 +9,14 @@
 
     @if (loading) {
     <div class="state-message">
-      <p>Loading notifications...</p>
+      <p>{{'notification.list.loading' | translate}}</p>
     </div>
     }
 
     @else if (error) {
     <div class="state-message error">
       <p>{{ error }}</p>
-      <button (click)="refreshNotifications()">Try Again</button>
+      <button (click)="refreshNotifications()">{{'notifications.list.error' | translate}}</button>
     </div>
     }
 
@@ -27,7 +27,7 @@
       </app-notification-card>
       } @empty {
       <div class="state-message empty">
-        <p>No notifications yet.</p>
+        <p>{{'notification.list.empty.title' | translate}}.</p>
       </div>
       }
     </div>

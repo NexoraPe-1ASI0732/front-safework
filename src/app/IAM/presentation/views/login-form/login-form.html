@@ -32,16 +32,16 @@
       </form>
 
       <div class="card-footer-links">
-        <a routerLink="/register" class="footer-link">Register User</a>
-        <a href="https://nexorape.github.io/Landing-Page/" class="footer-link">Back to home</a>
-        <a routerLink="/forgot-password" class="footer-link">Forgot your password?</a>
+        <a routerLink="/register" class="footer-link">{{ 'login.noAccount' | translate }}</a>
+        <a href="https://nexorape.github.io/Landing-Page/" class="footer-link">{{ 'login.home' | translate }}</a>
+        <a routerLink="/forgot-password" class="footer-link">{{ 'login.forgotPassword' | translate }}</a>
       </div>
 
     </mat-card-content>
   </mat-card>
 
   <footer class="page-footer">
-    <p>© 2025 SafeWork. Todos los derechos reservados.</p>
+    <p>{{ 'footer.text' | translate }}</p>
   </footer>
 
 </div>

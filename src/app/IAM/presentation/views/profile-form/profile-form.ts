@@ -10,13 +10,14 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { UserService } from '../../../infrastructure/user.service';
 import { User } from '../../../domain/model/user.model';
 import { EditProfileDialogComponent } from '../../components/edit-profile-dialog/edit-profile-dialog.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile-form',
   standalone: true,
   imports: [
     CommonModule, MatCardModule, MatButtonModule, MatIconModule,
-    MatDividerModule, MatDialogModule, MatSnackBarModule
+    MatDividerModule, MatDialogModule, MatSnackBarModule, TranslatePipe
   ],
   templateUrl: './profile-form.html',
   styleUrl: './profile-form.css'
@@ -70,7 +71,7 @@ export class ProfileForm implements OnInit {
         this.snackBar.open('Profile updated successfully!', 'Ok', { duration: 3000 });
         this.loading = false;
 
-        // Opcional: Si quieres actualizar el nombre en la Toolbar (IamStore), 
+        // Opcional: Si quieres actualizar el nombre en la Toolbar (IamStore),
         // podrías disparar una acción aquí o simplemente recargar la página.
       },
       error: () => {

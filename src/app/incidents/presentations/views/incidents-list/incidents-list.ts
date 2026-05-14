@@ -17,7 +17,8 @@ import { CreateIncidentDialogComponent } from '../../components/create-incident-
 import { MatDialogModule } from '@angular/material/dialog';
 import { IncidentDetailsDialogComponent } from '../../components/incident-details-dialog/incident-details-dialog.component';
 
-import { User } from '../../../../IAM/domain/model/user.model'; // Importa tu modelo User
+import { User } from '../../../../IAM/domain/model/user.model';
+import {TranslatePipe} from '@ngx-translate/core'; // Importa tu modelo User
 
 @Component({
   selector: 'app-incidents-list',
@@ -30,6 +31,7 @@ import { User } from '../../../../IAM/domain/model/user.model'; // Importa tu mo
     MatIconModule,
     MatCheckboxModule,
     MatDialogModule,
+    TranslatePipe,
   ],
   templateUrl: './incidents-list.html',
   styleUrls: ['./incidents-list.css']

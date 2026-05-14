@@ -1,4 +1,17 @@
 {
+  "crte-inci": {
+    "title": "Report New Incident",
+    "form": {
+      "title": "Title",
+      "descp": "Description",
+      "loc": "Location",
+      "cancel": "Cancel"
+    },
+    "error": {
+      "title": "Title is required",
+      "descp": "Description must be detailed"
+    }
+  },
   "footer": {
     "text": "© 2025 SafeWork. All rights reserved."
   },
@@ -9,15 +22,28 @@
     "password": "Password",
     "submit": "Login",
     "noAccount": "Don't have an account? Sign Up",
-    "forgotPassword": "Forgot Password?"
+    "forgotPassword": "Forgot Password?",
+    "home": "Back to home"
   },
   "signup": {
     "title": "Create a New Account",
+    "name": "Full Name",
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm Password",
     "submit": "Sign Up",
-    "haveAccount": "Already have an account? Login"
+    "haveAccount": "Already have an account? Login",
+    "crc": "Company Registration Code",
+    "error": {
+      "name": "Name is required",
+      "email": "Invalid email"
+    },
+    "toggle": {
+      "wkr": "Worker",
+      "empl": "Employer"
+    },
+    "rgstr": "REGISTER",
+    "rtrn": "Back to Login"
   },
   "option": {
     "profile": "Profile",
@@ -27,11 +53,15 @@
     "analytics": "Analytics"
   },
   "profile": {
+    "title": "My Profile",
     "welcome": "Welcome",
-    "personalInformation": "Personal Information",
+    "since": "MEMBER SINCE",
+    "last": "LAST UPDATE",
     "firstName": "First Name",
     "lastName": "Last Name",
+    "mail": "Email Address",
     "dni": "DNI",
+    "id": "Company ID",
     "phoneNumber": "Phone Number",
     "dateOfBirth": "Date of Birth",
     "gender": "Gender",
@@ -39,7 +69,8 @@
     "editInfo": "Edit Information",
     "logout": "Log Out",
     "deleteAccount": "Delete Account",
-    "loading": "Loading profile..."
+    "loading": "Loading profile...",
+    "uptd": "Update Profile"
   },
   "analytics": {
     "title": "Analytics",
@@ -81,6 +112,17 @@
       "FAILED": "Failed"
     }
   },
+  "incidents": {
+    "title": "List of Incidents",
+    "create": "Create Report",
+    "filter":{
+      "title":"Filter by Status",
+      "all": "Select All"
+    },
+    "only": "Show Only My Incidents",
+    "empty": "No incidents found.",
+    "load": "Loading incidents..."
+  },
   "assignments": {
     "board": {
       "title": "Assignments board",
@@ -101,13 +143,14 @@
       "emptyDescription": "There are currently no assignments to display.",
       "footer": "© 2025 SafeWork. All rights reserved."
     },
-    "card": {
+    "cards": {
       "ariaLabel": "Assignment card",
       "assigneeAriaLabel": "Assignee information",
       "timelineAriaLabel": "Timeline information",
       "assignedTo": "Assigned to:",
       "assignedAt": "Assigned:",
       "completedAt": "Completed:"
+
     },
     "sla": {
       "ariaLabel": "SLA information",
@@ -126,5 +169,11 @@
       "HIGH": "High",
       "CRITICAL": "Critical"
     }
+  },
+  "card": {
+    "maker": "Created By:",
+    "dtls": "View Details",
+    "me": "Assign to Me",
+    "file": "View File"
   }
 }

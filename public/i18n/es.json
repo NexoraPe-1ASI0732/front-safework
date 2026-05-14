@@ -1,4 +1,17 @@
 {
+  "crte-inci": {
+    "title": "Reportar Nuevo Incidente",
+    "form": {
+      "title": "Título",
+      "descp": "Descripción",
+      "loc": "Ubicación",
+      "cancel": "Cancelar"
+    },
+    "error": {
+      "title": "El título es requerido",
+      "descp": "La descricpción debe ser detalladax"
+    }
+  },
   "footer": {
     "text": "© 2025 SafeWork. Todos los derechos reservados."
   },
@@ -9,15 +22,28 @@
     "password": "Contraseña",
     "submit": "Iniciar sesión",
     "noAccount": "¿No tienes una cuenta? Regístrate",
-    "forgotPassword": "¿Olvidaste tu contraseña?"
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "home": "Regresar al inicio"
   },
   "signup": {
     "title": "Crear una nueva cuenta",
+    "name": "Nombre Completo",
     "email": "Correo electrónico",
     "password": "Contraseña",
     "confirmPassword": "Confirmar contraseña",
     "submit": "Regístrate",
-    "haveAccount": "¿Ya tienes una cuenta? Iniciar sesión"
+    "haveAccount": "¿Ya tienes una cuenta? Iniciar sesión",
+    "crc": "Codigo de Compañia Registrado",
+    "error": {
+      "name": "Nombre requerido",
+      "email": "Email invalido"
+    },
+    "toggle": {
+      "wkr": "Trabajador",
+      "empl": "Empleador"
+    },
+    "rgstr": "REGISTRARSE",
+    "rtrn": "Regresar al Inicio"
   },
   "option": {
     "profile": "Perfil",
@@ -27,11 +53,15 @@
     "analytics": "Analíticas"
   },
   "profile": {
+    "title": "Mi Perfíl",
     "welcome": "Bienvenido",
-    "personalInformation": "Información Personal",
+    "since": "MIEMBRO DESDE",
+    "last": "ÚLTIMA ACTUALIZACIÓN",
     "firstName": "Nombre",
     "lastName": "Apellido",
+    "mail": "Dirección de Correo",
     "dni": "DNI",
+    "id": "ID de la Compañia",
     "phoneNumber": "Teléfono",
     "dateOfBirth": "Fecha de Nacimiento",
     "gender": "Género",
@@ -39,7 +69,8 @@
     "editInfo": "Editar Información",
     "logout": "Cerrar Sesión",
     "deleteAccount": "Eliminar Cuenta",
-    "loading": "Cargando perfil..."
+    "loading": "Cargando perfil...",
+    "uptd": "Editar Perfil"
   },
   "analytics": {
     "title": "Analíticas",
@@ -81,6 +112,17 @@
       "FAILED": "Fallido"
     }
   },
+  "incidents": {
+    "title": "Lista de Incidentes",
+    "create": "Crear Reporte",
+    "filter":{
+      "title":"Filtrar por Estado",
+      "all": "Seleccionar  Todos"
+    },
+    "only": "Mostrar Solo Mis Incidentes",
+    "empty": "No se encontraron incidentes.",
+    "load": "Cargando incidentes..."
+  },
   "assignments": {
     "board": {
       "title": "Tablero de asignaciones",
@@ -101,13 +143,17 @@
       "emptyDescription": "Actualmente no hay asignaciones para mostrar.",
       "footer": "© 2025 SafeWork. Todos los derechos reservados."
     },
-    "card": {
+    "cards": {
       "ariaLabel": "Tarjeta de asignación",
       "assigneeAriaLabel": "Información del asignado",
       "timelineAriaLabel": "Información de línea de tiempo",
       "assignedTo": "Asignado a:",
       "assignedAt": "Asignado:",
-      "completedAt": "Completado:"
+      "completedAt": "Completado:",
+      "maker": "Creado Por:",
+      "dtls": "Ver Detalles",
+      "me": "Asignados a mi",
+      "file": "Ver Archivo"
     },
     "sla": {
       "ariaLabel": "Información del SLA",
@@ -126,5 +172,11 @@
       "HIGH": "Alta",
       "CRITICAL": "Crítica"
     }
+  },
+  "card": {
+    "maker": "Creado Por:",
+    "dtls": "Ver Detalles",
+    "me": "Asignarme a Mi",
+    "file": "Ver Archivo"
   }
 }

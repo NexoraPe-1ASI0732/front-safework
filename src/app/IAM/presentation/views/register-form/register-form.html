@@ -1,25 +1,25 @@
 <mat-card class="register-card">
 
   <mat-card-header>
-    <mat-card-title>Create your account</mat-card-title>
+    <mat-card-title>{{'signup.title' | translate}}</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form-container">
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Full Name</mat-label>
+        <mat-label>{{ 'signup.name' | translate }}</mat-label>
         <input matInput formControlName="fullName" required placeholder="John Doe" />
         @if (registerForm.get('fullName')?.hasError('required')) {
-        <mat-error>Name is required</mat-error>
+        <mat-error>{{'signup.error.name' | translate}}</mat-error>
         }
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>{{ 'signup.email' | translate }}</mat-label>
         <input matInput type="email" formControlName="email" required placeholder="example@mail.com" />
-        @if (registerForm.get('email')?.hasError('email')) {
-        <mat-error>Invalid email</mat-error>
+        @if (registerForm.get('email')?.hasError('email') || registerForm.get('email')?.hasError('required')) {
+        <mat-error>{{'signup.error.email' | translate}}</mat-error>
         }
       </mat-form-field>
 
@@ -38,30 +38,30 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Company Registration Code</mat-label>
+        <mat-label>{{'signup.crc'| translate}}</mat-label>
         <input matInput formControlName="companyCode" required placeholder="Ex: CMP-2025-X" />
       </mat-form-field>
 
       <div class="toggle-container">
         <mat-button-toggle-group formControlName="role" class="custom-toggle-group">
-          <mat-button-toggle value="employer" class="toggle-btn">Employer</mat-button-toggle>
-          <mat-button-toggle value="worker" class="toggle-btn">Worker</mat-button-toggle>
+          <mat-button-toggle value="employer" class="toggle-btn">{{'signup.toggle.empl' | translate}}</mat-button-toggle>
+          <mat-button-toggle value="worker" class="toggle-btn">{{'signup.toggle.wkr' | translate}}</mat-button-toggle>
         </mat-button-toggle-group>
       </div>
 
       <button mat-flat-button class="btn-register" type="submit" [disabled]="registerForm.invalid">
-        REGISTER
+        {{'signup.rgstr' | translate}}
       </button>
 
     </form>
 
     <div class="card-footer-links">
-      <a routerLink="/login" class="footer-link">Back to Login</a>
+      <a routerLink="/login" class="footer-link">{{'signup.rtrn' | translate}}</a>
     </div>
 
   </mat-card-content>
 </mat-card>
 
 <footer class="page-footer">
-  <p>© 2025 SafeWork. Todos los derechos reservados.</p>
+  <p>{{'footer.text' | translate}}</p>
 </footer>

@@ -2,8 +2,8 @@
 <div class="page-header">
   <div class="header-content">
     <div class="title-group">
-      <h1>My Profile</h1>
-      <p class="subtitle">Welcome back, {{ user?.fullName || 'User' }}</p>
+      <h1>{{'profile.title' | translate}}</h1>
+      <p class="subtitle">{{'profile.welcome' | translate}} {{ user?.fullName || 'User' }}</p>
     </div>
   </div>
 </div>
@@ -13,7 +13,7 @@
 
   @if (loading) {
   <div class="loading-state">
-    <p>Loading Profile...</p>
+    <p>{{'profile.loading' | translate}}</p>
   </div>
   } @else if (user) {
 
@@ -36,13 +36,13 @@
         <!-- Fechas (Member Since / Last Update) -->
         <div class="dates-info">
           <div class="date-item">
-            <label>MEMBER SINCE</label>
+            <label>{{'profile.since' | translate}}</label>
             <span>{{ user.createdAt | date:'mediumDate' }}</span>
           </div>
 
           @if(user.updatedAt) {
           <div class="date-item">
-            <label>LAST UPDATE</label>
+            <label>{{'profile.last' | translate}}</label>
             <span>{{ user.updatedAt | date:'shortDate' }}</span>
           </div>
           }
@@ -69,7 +69,7 @@
               <mat-icon>email</mat-icon>
             </div>
             <div class="info-text">
-              <label>Email Address</label>
+              <label>{{'profile.mail' | translate}}</label>
               <p>{{ user.email }}</p>
             </div>
           </div>
@@ -79,7 +79,7 @@
               <mat-icon>phone</mat-icon>
             </div>
             <div class="info-text">
-              <label>Phone Number</label>
+              <label>{{'profile.phoneNumber' | translate}}</label>
               <p>{{ user.phoneNumber || 'Not provided' }}</p>
             </div>
           </div>
@@ -89,7 +89,7 @@
               <mat-icon>business</mat-icon>
             </div>
             <div class="info-text">
-              <label>Company ID</label>
+              <label>{{'profile.id' | translate}}</label>
               <p>#{{ user.companyId }}</p>
             </div>
           </div>
@@ -99,7 +99,7 @@
         <!-- Botón de Acción (Alineado a la derecha) -->
         <div class="actions-row">
           <button mat-stroked-button class="btn-update" (click)="openEditDialog()">
-            <mat-icon>edit</mat-icon> Update Profile
+            <mat-icon>edit</mat-icon> {{'profile.uptd' | translate}}
           </button>
         </div>
 

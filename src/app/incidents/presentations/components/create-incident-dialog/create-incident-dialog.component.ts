@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { IncidentService, CreateIncidentPayload } from '../../../infrastructure/incident.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-incident-dialog',
@@ -16,7 +17,8 @@ import { IncidentService, CreateIncidentPayload } from '../../../infrastructure/
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    TranslatePipe
   ],
   templateUrl: './create-incident-dialog.component.html',
   styleUrl: './create-incident-dialog.component.css' // Opcional si quieres estilos específicos

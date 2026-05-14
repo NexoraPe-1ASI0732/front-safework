@@ -2,10 +2,10 @@
 
   <header class="dark-header">
     <div class="header-content">
-      <h1>List of Incidents</h1>
+      <h1>{{'incidents.title' | translate}}</h1>
 
       <button mat-flat-button class="btn-create" (click)="openCreateDialog()">
-        <mat-icon>add</mat-icon> Create Report
+        <mat-icon>add</mat-icon> {{'incidents.create' | translate}}
       </button>
     </div>
   </header>
@@ -13,11 +13,11 @@
   <main class="main-container">
 
     <div class="filters-card">
-      <h3>Filter by Status</h3>
+      <h3>{{'incidents.filter.title' | translate}}</h3>
 
       <div class="filters-wrapper">
         <mat-checkbox [checked]="isAllSelected()" (change)="toggleSelectAll($event.checked)" class="custom-checkbox">
-          Select All
+          {{'incidents.title' | translate}}
         </mat-checkbox>
 
         <div class="status-group">
@@ -31,7 +31,7 @@
 
         <div class="mine-toggle">
           <mat-checkbox [(ngModel)]="showOnlyMine" (change)="toggleMyIncidents($event.checked)">
-            Show Only My Incidents
+            {{'incidents.only' | translate}}
           </mat-checkbox>
         </div>
       </div>
@@ -39,7 +39,7 @@
 
     <div class="incidents-stack">
       @if (isLoading) {
-      <div class="loading-state">Loading incidents...</div>
+      <div class="loading-state">{{'incidents.load' | translate}}</div>
       } @else if (error) {
       <div class="error-state">{{ error }}</div>
       } @else {
@@ -49,7 +49,7 @@
         (assignToMe)="onAssignToMe($event)">
       </app-incident-card>
       } @empty {
-      <div class="empty-state">No incidents found.</div>
+      <div class="empty-state">{{'incidents.empty' | translate}}</div>
       }
 
       }
@@ -58,6 +58,6 @@
   </main>
 
   <footer class="app-footer">
-    <p>© 2025 SafeWork. Todos los derechos reservados.</p>
+    <p>{{'footer.text' | translate}}</p>
   </footer>
 </div>

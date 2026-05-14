@@ -7,11 +7,12 @@ import { MatChipsModule } from '@angular/material/chips';
 import { Incident } from '../../../domain/model/incident.model';
 
 import { User } from '../../../../IAM/domain/model/user.model';
+import {TranslateModule, TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-incident-card',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatChipsModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatChipsModule, TranslatePipe,TranslateModule],
   templateUrl: './incident-card.component.html',
   styleUrl: './incident-card.component.css'
 })

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { Notification } from '../../../domain/notification.model';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-notification-card',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatIconModule],
+    imports: [CommonModule, MatCardModule, MatIconModule, TranslatePipe],
   templateUrl: './notification-card.component.html',
   styleUrls: ['./notification-card.component.css']
 })

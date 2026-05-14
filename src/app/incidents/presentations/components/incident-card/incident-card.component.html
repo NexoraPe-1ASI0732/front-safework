@@ -18,24 +18,24 @@
 
         <div class="meta-tags">
             <span class="tag">ID: #{{ incident.id }}</span>
-            <span class="tag">Created By: {{ incident.reporterName }}</span>
+            <span class="tag">{{'card.maker' | translate}} {{ incident.reporterName }}</span>
         </div>
 
         <div class="action-buttons">
 
             <button class="btn-action btn-dark" (click)="viewDetails.emit(incident.id)">
-                View Details
+                {{'card.dtls' | translate}}
             </button>
 
             @if (canAssign()) {
             <button class="btn-action btn-yellow" (click)="assignToMe.emit(incident.id)">
-                Assign to Me
+              {{'card.me' | translate}}
             </button>
             }
 
             @if (incident.documentUrl) {
             <button class="btn-action btn-blue" (click)="openDocument()">
-                View File
+              {{'card.file' | translate}}
             </button>
             }
 
