@@ -8,5 +8,33 @@
 }
 
 .full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Estilos para nuestro nuevo mapa */
+.map-wrapper {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.map-label {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#map-container {
+  height: 220px; /* Tamaño ideal "no muy grande" para un diálogo */
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 1; /* Previene que se superponga sobre los menús de Angular Material */
+}
+
+.full-width {
     width: 100%;
 }

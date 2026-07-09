@@ -21,10 +21,14 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
-            <mat-label>{{'crte-inci.form.loc' | translate}}</mat-label>
-
-            <input matInput formControlName="location" placeholder="E.g., Building A, Floor 2" />
+          <mat-label>{{'crte-inci.form.loc' | translate}}</mat-label>
+          <input matInput formControlName="location" placeholder="Selecciona un punto en el mapa" readonly />
         </mat-form-field>
+
+        <div class="map-wrapper">
+          <label class="map-label">Selecciona la ubicación exacta:</label>
+          <div id="map-container"></div>
+        </div>
     </form>
 </mat-dialog-content>
 
