@@ -28,6 +28,11 @@
           </mat-checkbox>
           }
         </div>
+        <div class="export-container" style="margin-top: 15px; display: flex; justify-content: flex-end;">
+          <button mat-stroked-button color="primary" (click)="exportToExcel()" [disabled]="isLoading || filteredIncidents.length === 0">
+            <mat-icon>download</mat-icon> Exportar Excel
+          </button>
+        </div>
 
         <div class="mine-toggle">
           <mat-checkbox [(ngModel)]="showOnlyMine" (change)="toggleMyIncidents($event.checked)">

@@ -20,6 +20,8 @@ import { IncidentDetailsDialogComponent } from '../../components/incident-detail
 import { User } from '../../../../IAM/domain/model/user.model';
 import {TranslatePipe} from '@ngx-translate/core'; // Importa tu modelo User
 
+import * as XLSX from 'xlsx';
+
 @Component({
   selector: 'app-incidents-list',
   standalone: true,
@@ -75,6 +77,35 @@ export class IncidentsList implements OnInit {
     console.log('Usuario actual:', this.currentUser);
 
     this.loadIncidents();
+  }
+  exportToExcel(): void {
+    if (this.filteredIncidents.length === 0) {
+      alert('No hay datos filtrados para exportar.');
+      return;
+    }
+
+    // 1. Mapear los datos para que las columnas del Excel tengan nombres limpios
+    const datosExcel = this.filteredIncidents.map(incident => ({
+      'ID': incident.id,
+      'Título': incident.title,
+      'Descripción': incident.description,
+      'Ubicación': incident.location,
+      'Estado': incident.status,
+      'Reportado Por': incident.reporterName || 'N/A',
+      'Asignado A': incident.assigneeName || 'N/A',
+      'URL Documento': incident.documentUrl || 'N/A'
+    }));
+
+    // 2. Crear la hoja de trabajo (Worksheet) a partir del JSON mapeado
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(datosExcel);
+
+    // 3. Crear el libro de trabajo (Workbook)
+    const workbook: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Incidentes');
+
+    // 4. Generar el archivo y forzar la descarga en el navegador
+    const fecha = new Date().toISOString().slice(0, 10);
+    XLSX.writeFile(workbook, `Reporte_Incidentes_${fecha}.xlsx`);
   }
 
   loadIncidents(): void {
